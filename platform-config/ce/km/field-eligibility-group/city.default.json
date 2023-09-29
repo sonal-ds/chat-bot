@@ -9,6 +9,7 @@
     "c_addressRegionAbbreviation",
     "c_addressRegionDisplayName",
     "description",
+    "richTextDescription",
     "slug",
     "dm_directoryChildren",
     "dm_directoryManagerId",

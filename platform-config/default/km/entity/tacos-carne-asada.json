@@ -41,7 +41,7 @@
         }
       }
     ],
-    "description": "Grilled steak"
+    "richTextDescription": "Grilled steak"
   },
   "entityType": "ce_menuItem",
   "labels": []

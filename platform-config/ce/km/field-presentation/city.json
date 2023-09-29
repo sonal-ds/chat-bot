@@ -21,6 +21,9 @@
           "id": "description"
         },
         {
+          "id": "richTextDescription"
+        },
+        {
           "id": "c_addressCountryAbbreviation"
         },
         {

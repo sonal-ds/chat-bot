@@ -19,6 +19,9 @@
         },
         {
           "id": "description"
+        },
+        {
+          "id": "richTextDescription"
         }
       ]
     },

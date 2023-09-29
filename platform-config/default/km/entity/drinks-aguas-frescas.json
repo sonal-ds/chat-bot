@@ -41,7 +41,7 @@
         }
       }
     ],
-    "description": "Fresh water"
+    "richTextDescription": "Fresh water"
   },
   "entityType": "ce_menuItem",
   "labels": []

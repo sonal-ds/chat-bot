@@ -41,7 +41,7 @@
         }
       }
     ],
-    "description": "Sweet rice milk beverage flavored with cinnamon, vanilla, and sugar."
+    "richTextDescription": "Sweet rice milk beverage flavored with cinnamon, vanilla, and sugar."
   },
   "entityType": "ce_menuItem",
   "labels": []

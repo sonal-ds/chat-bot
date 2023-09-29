@@ -41,7 +41,7 @@
         }
       }
     ],
-    "description": "Jarritos: fruit punch, grapefruit, guava, passion fruit, strawberry, tamarind, lime, Mexican Cola, Watermelon, Mango, Mandarin, Pineapple"
+    "richTextDescription": "Jarritos: fruit punch, grapefruit, guava, passion fruit, strawberry, tamarind, lime, Mexican Cola, Watermelon, Mango, Mandarin, Pineapple"
   },
   "entityType": "ce_menuItem",
   "labels": []

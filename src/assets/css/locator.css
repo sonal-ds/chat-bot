@@ -1,0 +1,207 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Locator Page */
+
+.locator-inner-wrapper {
+    @apply flex flex-col lg:flex-row justify-between;
+  }
+  
+  .locator-content {
+    @apply text-[0.75rem] leading-5 w-full max-w-full lg:w-[45%] lg:max-w-[51.625rem];
+  }
+  .locator-mapBox {
+    @apply w-full lg:w-[55%] hidden lg:block grow;
+  }
+  .locator-map-wrapper {
+    @apply h-screen;
+  }
+  
+  .locator-map-wrapper img {
+    @apply h-full w-full;
+  } 
+  
+  .locator-content h1 {
+    @apply text-[1.438rem] leading-7 font-Carpetright font-bold p-3.5 bg-search-block-gray text-white;
+  }
+  .locator-content .find-store-suggestion {
+    @apply bg-search-block-gray;
+  }
+  .locator-content .find-store-suggestion p {
+    @apply px-3.5 text-white;
+  }
+  
+  .locator-content .locator-searchWrapper {
+    @apply bg-search-block-gray sticky top-0 text-white z-[2];
+  }
+  
+  .search-form {
+    @apply pt-3.5 px-3.5 pb-2 border-b border-white md:border-none;
+  }
+  
+  .search-form .search-form-group {
+    @apply flex items-center;
+  }
+  
+  .search-form .search-bar {
+    @apply grow max-w-[33.25rem];
+  }
+  
+  .search-form .search-bar input {
+    @apply w-full text-search-block-gray text-sm px-3.5 py-2 h-[2.406rem] focus:outline-none;
+  }
+  .search-form .search-btn button {
+    @apply bg-[#979799] px-7 mx-3 font-Arial font-bold h-[2.406rem] rounded;
+  }
+  
+  .search-form .geo-location {
+    @apply flex justify-between gap-2 px-2 items-center;
+  }
+  
+  .filters-block .LocatorFilters-select {
+    @apply flex flex-wrap justify-start items-center;
+  }
+  
+  .filters-block {
+    @apply mt-3 px-3.5;
+  }
+  
+  .filter-item {
+    @apply pr-[1.313rem] mb-3;
+  }
+  .filter-title {
+    @apply font-Arial font-bold;
+  }
+  
+  .filters input {
+    @apply hidden;
+  }
+  
+  .filters input + label {
+    background-position: 50%;
+    background-size: 9px;
+    @apply before:content-[""] before:border before:border-white before:mr-2 before:px-[7px] before:rounded-[3px];
+  }
+  .filters input:checked + label::before {
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 0.625rem;
+  }
+  
+  .filters input:checked + label {
+    @apply before:bg-[url("https://www.carpetright.co.uk/store/permanent-b0b701/assets/images/check.a88e6252.svg")] bg-no-repeat;
+  }
+  
+  /* location listing */
+  
+  .locator-initial {
+    @apply px-3.5 pt-3.5;
+  }
+  .locator-initial .locator-initialText {
+    @apply text-primary-gray mb-[1.125rem];
+  }
+  
+  .locator-initial .locator-countries {
+    @apply flex flex-wrap flex-col md:flex-row justify-between;
+  }
+  .locator-countries .locator-countryLink {
+    @apply font-Arial font-bold w-full md:w-[calc(33.33333%_-_0.5rem)] mr-3 mb-3 py-3 md:py-6 px-6 text-center border border-search-block-gray hover:border-[#979799] hover:bg-[#979799] hover:text-white last:mr-0 rounded-[9px];
+  }
+  
+  .locator-countries .locator-countryLink:nth-child(3) {
+    @apply mr-0;
+  }
+  
+  /* Locator Result */
+  
+  .locator-resultsContainer {
+    @apply max-h-[calc(100vh_-_172px)] overflow-y-scroll;
+  }
+  
+  .locator-resultsContainer .Locator-resultsSummary {
+    @apply pt-[1.125rem] px-3.5;
+  }
+  
+  .locator-resultsContainer .Locator-resultsSummary p {
+    @apply text-sm text-primary-gray font-Carpetright font-normal;
+  }
+  
+  .locator-resultsContainer .locator-results {
+    @apply pt-1;
+  }
+  
+  .result-list .result-list-item {
+    counter-increment: resultCount;
+    @apply m-3.5 pl-0 lg:pl-14 border border-[#40bfba] rounded-[9px] opacity-90 bg-[rgba(103,199,197,.05)] relative z-0 before:absolute before:left-7 before:top-4 before:content-none lg:before:content-[counter(resultCount,upper-alpha)] before:font-Carpetright before:font-bold before:text-lg before:text-primary-gray;
+  }
+  
+  .result-list-item .location-content {
+    @apply p-[1.125rem] pl-[1.125rem] lg:pl-0 flex flex-col lg:flex-row justify-between;
+  }
+  .location-name {
+    @apply flex justify-between items-start lg:block;
+  }
+  
+  .result-list-item .location-name h3 {
+    @apply text-lg font-Carpetright font-normal text-breadcrumb-sky-blue pb-3.5;
+  }
+  
+  .result-list-item .location-address address {
+    @apply not-italic text-[0.75rem] leading-5 text-primary-gray;
+  }
+  
+  .result-list-item .location-content .location-right-col {
+    @apply hidden lg:flex flex-col justify-between;
+  }
+  .miles {
+    @apply text-right;
+  }
+  .location-cta {
+    @apply hidden lg:block;
+  }
+  
+  .location-cta .btn-primary {
+    @apply min-w-[8.375rem];
+  }
+  .location-cta-mobile {
+    @apply block mt-5 lg:hidden;
+  }
+  
+  .location-name .miles {
+    @apply block lg:hidden;
+  }
+  .location-right-col .miles {
+    @apply hidden lg:block;
+  }
+  .location-cta-mobile .btn-primary {
+    @apply min-w-[10.938rem];
+  }
+  
+  
+  /* Locator Page */
+
+  @media screen and (max-width: 500px) {
+    .search-form .search-form-group {
+      @apply flex-wrap;
+    }
+    .search-form .geo-location {
+      @apply mt-3;
+    }
+  }
+  
+  @media screen and (max-width: 376px) {
+    .search-form .search-bar {
+      @apply w-full;
+    }
+    .search-form .search-btn {
+      @apply w-full mt-3;
+    }
+    .search-form .search-btn button {
+      @apply w-full m-0;
+    }
+    .dm-search-bar input {
+      @apply min-w-max;
+    }
+  }

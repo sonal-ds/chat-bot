@@ -2,10 +2,1050 @@
 @tailwind components;
 @tailwind utilities;
 
-.centered-container {
-  @apply mx-auto px-5 md:px-14 max-w-screen-xl mt-8 mb-16;
+@font-face {
+  font-family: 'Arial';
+  src: url('assets/fonts/Arial-Mdm.woff2') format('woff2'),
+      url('assets/fonts/Arial-Mdm.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 
-.section {
-  @apply mt-8 mb-16;
+@font-face {
+  font-family: 'Arial';
+  src: url('assets/fonts/ArialMT.woff2') format('woff2'),
+      url('assets/fonts/ArialMT.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Arial';
+  src: url('assets/fonts/Arial-Black.woff2') format('woff2'),
+      url('assets/fonts/Arial-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Arial';
+  src: url('assets/fonts/Arial-BoldMT.woff2') format('woff2'),
+      url('assets/fonts/Arial-BoldMT.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Carpetright';
+  src: url('assets/fonts/Carpetright.woff2') format('woff2'),
+      url('assets/fonts/Carpetright.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Carpetright';
+  src: url('assets/fonts/Carpetright.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Carpetright';
+  src: url('assets/fonts/Carpetright.woff2') format('woff2'),
+      url('assets/fonts/Carpetright.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+/* Base */
+/* html {
+  @apply text-base md:text-[85%];
+} */
+/* @media screen and (min-width: 1280px) {
+  html {
+    @apply text-[100%];
+  }
+} */
+body,
+button,
+input,
+optgroup,
+select,
+textarea {
+  @apply font-Arial;
+}
+body.menu-opened {
+  @apply overflow-hidden lg:overflow-x-hidden lg:overflow-y-auto;
+}
+body {
+  @apply text-black font-normal text-sm leading-normal;
+}
+a:focus,
+a:focus-visible {
+  @apply outline-none;
+}
+
+.btn-primary {
+  @apply text-[1rem] leading-4 font-semibold font-Arial bg-breadcrumb-sky-blue text-white min-w-[9.875rem] max-w-[12.5rem] inline-flex justify-center items-center py-2 px-6 rounded-[9px] tracking-[1px];
+}
+
+.custom-container {
+  @apply max-w-[85.375rem] mx-auto px-5;
+}
+
+.container-small {
+  @apply max-w-5xl mx-auto;
+}
+
+.section-heading {
+  @apply text-[1.75rem] leading-[2.625rem] font-bold font-Carpetright;
+}
+.section-seprator-heading {
+  @apply text-[1.438rem] leading-[2.125rem] text-primary-gray font-Carpetright font-bold;
+}
+.section-sub-heading {
+  @apply text-[1.125rem] text-breadcrumb-sky-blue font-light leading-normal font-Carpetright;
+}
+.section-small-heading {
+  @apply text-sm font-Arial font-bold;
+}
+
+/* Breadcrumb */
+
+.breadcrumb ul {
+  @apply flex flex-wrap py-2 mt-10;
+}
+.breadcrumb ul li {
+  @apply before:content-[">"] before:px-1.5 before:text-breadcrumb-sky-blue first:before:content-none;
+}
+.breadcrumb ul li a {
+  @apply text-xs font-bold font-Arial text-breadcrumb-sky-blue hover:text-primary-gray;
+}
+
+/* Breadcrumb */
+
+/* Hero section */
+
+.hero-banner {
+  background-position: 50%;
+  @apply relative w-full h-[20rem] bg-cover bg-no-repeat mt-1 rounded-[9px];
+}
+.hero-banner .img-responsive {
+  @apply hidden;
+}
+.hero-banner .hero-text {
+  @apply flex flex-col items-center absolute top-9 left-9 p-[1.125rem] bg-primary-gray rounded-[9px];
+}
+.hero-text h1 {
+  @apply text-white pt-2 px-3.5 mb-5 text-center;
+}
+
+.total-hours {
+  @apply text-[1.125rem] leading-5 text-white mb-5;
+}
+.openAll {
+  @apply text-[1.125rem] leading-5 text-white mb-5;
+}
+.total-hours .hours-status {
+  @apply font-bold font-Arial;
+}
+
+/* Store Details section */
+
+.store-details {
+  @apply pt-[1.375rem] pb-14;
+}
+
+.store-details .outer-row {
+  @apply flex;
+}
+
+.store-details .box {
+  @apply flex-1 border-r border-r-[#b1b1b1] last:border-0;
+}
+.box.store-detail {
+  @apply pr-3.5;
+}
+.store-details h2 {
+  @apply mb-3.5;
+}
+.store-detail .location-address {
+  @apply mb-3.5;
+}
+.store-detail .location-address span,
+.store-detail .location-address abbr {
+  @apply text-base font-normal text-primary-gray no-underline;
+}
+
+.store-detail .location-phone {
+  @apply text-base text-breadcrumb-sky-blue pb-3.5;
+}
+.store-detail .location-phone span {
+  @apply first:font-bold first:mr-1 first:text-black last:font-normal last:text-primary-gray;
+}
+
+.store-detail .cta-buttons {
+  @apply mt-3.5;
+}
+
+.store-detail .button-group {
+  @apply flex mb-3.5 items-center gap-4;
+}
+/* .store-detail .button-group img{
+  @apply w-[21px] h-[21px];
+} */
+.store-detail .btn-secondary {
+  @apply w-full text-center text-[1rem] leading-4 font-semibold bg-breadcrumb-sky-blue text-white inline-flex justify-center items-center py-2 px-[1.625rem] rounded-[9px];
+}
+
+.box.store-timing {
+  @apply pl-7;
+}
+.store-hours {
+  @apply mb-5;
+}
+.store-timing table tr {
+  @apply border-b border-b-primary-gray border-opacity-20;
+}
+.store-timing table tr td {
+  @apply text-base  font-Arial text-primary-gray capitalize;
+}
+
+.store-timing .day-name {
+  @apply pr-14;
+}
+.store-timing .hours {
+  @apply flex gap-1 items-center;
+}
+
+button.holiday-hours-btn::after {
+  background-size: 16px;
+}
+button.holiday-hours-btn {
+  @apply relative pr-6 after:absolute after:w-4 after:h-[19px] after:right-0 after:top-0.5 after:bg-no-repeat bg-center after:rotate-[270deg] after:bg-[url("https://www.carpetright.co.uk/store/permanent-b0b701/assets/images/chevron-left.4585d0c2.svg")] after:transition-all after:duration-100 after:ease-in-out;
+}
+
+button.holiday-hours-btn.active {
+  @apply after:rotate-90;
+}
+.pop-up-holyhrs{
+  @apply flex gap-5 text-[1rem] leading-7 text-primary-gray font-bold;
+}
+
+.box.store-map {
+  @apply pl-7;
+}
+/* Store Details section */
+
+/* About Section */
+
+.section-seprator-heading {
+  @apply flex text-center justify-center items-center mb-[1.375rem] before:content-[""] before:border-t before:border-t-primary-gray before:mr-[1.125rem] before:flex-[1_0_1.25rem]
+  after:content-[""] after:border-t after:border-t-primary-gray after:ml-[1.125rem] after:flex-[1_0_1.25rem];
+}
+.about-sec {
+  @apply py-[1.375rem];
+}
+
+.about-description {
+  @apply mx-auto text-[0.75rem] leading-[1.25rem] font-normal text-primary-gray pt-[1.375rem];
+}
+.about-description p + p {
+  @apply mt-4;
+}
+.about-sec .about-content-wrapper {
+  @apply flex justify-center;
+}
+.about-sec .about-sec-content {
+  @apply w-2/4 mr-7;
+}
+.about-sec .About-carouselWrapper {
+  @apply w-2/4;
+}
+.About-carouselWrapper .splide__track {
+  @apply h-[38.25rem] rounded-lg;
+}
+.About-carouselWrapper .splide__track .splide__slide img {
+  @apply h-full w-full rounded-lg;
+}
+.About-carouselWrapper .splide.splide--slide {
+  @apply h-[40rem] relative;
+}
+
+.About-carouselWrapper .splide.splide--slide .splide__arrows {
+  @apply absolute bottom-0.5 left-2/4 -translate-x-2/4 max-w-[19.25rem] w-full;
+}
+
+.About-carouselWrapper
+  .splide.splide--slide
+  .splide__arrows
+  .splide__arrow--prev {
+  @apply left-0 bg-transparent selection:bg-transparent;
+}
+.About-carouselWrapper
+  .splide.splide--slide
+  .splide__arrows
+  .splide__arrow--next {
+  @apply right-0 bg-transparent selection:bg-transparent;
+}
+
+.About-carouselWrapper
+  .splide.splide--slide
+  .splide__arrows
+  .splide__arrow--next
+  svg,
+.About-carouselWrapper
+  .splide.splide--slide
+  .splide__arrows
+  .splide__arrow--prev
+  svg {
+  @apply h-3 w-3 fill-breadcrumb-sky-blue;
+}
+
+.About-carouselWrapper .splide.splide--slide .splide__pagination {
+  @apply bottom-0;
+}
+.About-carouselWrapper
+  .splide.splide--slide
+  .splide__pagination
+  .splide__pagination__page {
+  @apply h-[3px] w-[3px];
+}
+.About-carouselWrapper
+  .splide.splide--slide
+  .splide__pagination
+  .splide__pagination__page.is-active {
+  @apply h-[4px] w-[4px] bg-breadcrumb-sky-blue;
+}
+
+.About-carouselWrapper .splide.splide--slide .splide__pagination li {
+  @apply px-2.5;
+}
+
+.know-more a {
+  @apply text-breadcrumb-sky-blue inline-block hover:text-black hover:underline mt-3.5;
+}
+
+/* About Section */
+
+/* Brands section */
+
+.brands-section {
+  @apply py-[1.375rem];
+}
+
+.brands-content {
+  @apply py-[1.375rem];
+}
+
+.brands-section .brand-logo-wrapper {
+  @apply flex justify-center flex-wrap;
+}
+
+.brand-logo-wrapper .brand-logo {
+  @apply w-2/4 px-3.5 pb-3.5;
+}
+
+/* Brands section */
+
+/* Listing Section */
+
+.list-section {
+  @apply border-t border-t-primary-gray border-opacity-50 pb-7;
+}
+
+.list-section .section-small-heading {
+  @apply pt-7 pb-3.5 uppercase text-center;
+}
+
+ul.ListSection-content {
+  -webkit-columns: 3;
+  -moz-columns: 3;
+  column-count: 3;
+  @apply pl-3.5;
+}
+
+.ListSection-content li.ListSection-item {
+  @apply p-1 font-normal text-[0.75rem] leading-5 text-primary-gray list-disc;
+}
+
+/* Listing Section */
+
+/* Reasons section */
+
+.reasons-tiles {
+  @apply flex flex-wrap justify-center pb-2 pt-[1.375rem];
+}
+
+.reasons-tiles .tile {
+  @apply w-2/4 pb-3.5;
+}
+/* Reasons section */
+
+/* Nearby stores section */
+
+.nearby-stores {
+  @apply py-[1.375rem];
+}
+.nearby-stores.all-dm-stores {
+  @apply pt-0;
+}
+
+.nearby-stores .nearby-row {
+  @apply pt-[1.375rem] flex justify-between;
+}
+.nearby-stores.all-dm-stores .nearby-row {
+  @apply pt-0;
+}
+
+.nearby-stores .Nearby-loc-card {
+  @apply border border-[#b1b1b1] w-[32%] p-3.5 rounded-lg;
+}
+
+.Nearby-loc-card .section-sub-heading {
+  @apply mb-2 pb-3.5 hover:underline hover:text-[#40bfba];
+}
+.Nearby-loc-card .section-sub-heading a {
+  @apply hover:text-primary-gray hover:no-underline;
+}
+
+.near-loc-address p {
+  @apply text-[0.75rem] leading-5 text-primary-gray;
+}
+.near-loc-address address {
+  @apply not-italic mb-2;
+}
+.near-loc-cta {
+  @apply mt-3.5;
+}
+
+.near-loc-cta .btn-primary {
+  @apply min-w-[8.25rem];
+}
+
+/* Nearby stores section */
+
+/* Hero Mobile buttons location banner */
+.hero-btn-mobile-row {
+  @apply border-b border-b-[#b1b1b1] flex md:hidden;
+}
+
+.hero-mobile-btn-wrapper {
+  @apply w-1/3 p-2 border-r border-[#b1b1b1] last:border-0;
+}
+.hero-mobile-btn {
+  @apply flex flex-col justify-center items-center;
+}
+.hero-mobile-btn img {
+  @apply w-[21px] h-[21px] m-2;
+}
+.hero-mobile-btn span {
+  @apply text-xs text-primary-gray font-normal;
+}
+
+/* Hero Mobile buttons location banner */
+
+/* Locator Page */
+
+.locator-inner-wrapper {
+  @apply flex justify-between;
+}
+
+.locator-content {
+  @apply w-[45%] max-w-[51.625rem];
+}
+.locator-mapBox {
+  @apply w-[55%] grow;
+}
+.locator-map-wrapper {
+  @apply h-screen;
+}
+
+.locator-map-wrapper img {
+  @apply h-full w-full;
+}
+
+.locator-content {
+  @apply text-[0.75rem] leading-5;
+}
+
+.locator-content h1 {
+  @apply text-[1.438rem] leading-7 font-Carpetright font-bold p-3.5 bg-search-block-gray text-white;
+}
+.locator-content .find-store-suggestion {
+  @apply bg-search-block-gray;
+}
+.locator-content .find-store-suggestion p {
+  @apply px-3.5 text-white;
+}
+
+.locator-content .locator-searchWrapper {
+  @apply bg-search-block-gray sticky top-0 text-white z-[2];
+}
+
+.search-form {
+  @apply pt-3.5 px-3.5 pb-2 border-b border-white md:border-none;
+}
+
+.search-form .search-form-group {
+  @apply flex items-center;
+}
+
+.search-form .search-bar {
+  @apply grow max-w-[33.25rem];
+}
+
+.search-form .search-bar input {
+  @apply w-full text-search-block-gray text-sm px-3.5 py-2 h-[2.406rem] focus:outline-none;
+}
+.search-form .search-btn button {
+  @apply bg-[#979799] px-7 mx-3 font-Arial font-bold h-[2.406rem] rounded;
+}
+
+.search-form .geo-location {
+  @apply flex justify-between gap-2 px-2 items-center;
+}
+
+.filters-block .LocatorFilters-select {
+  @apply flex flex-wrap justify-start items-center;
+}
+
+.filters-block {
+  @apply mt-3 px-3.5;
+}
+
+.filter-item {
+  @apply pr-[1.313rem] mb-3;
+}
+.filter-title {
+  @apply font-Arial font-bold;
+}
+
+.filters input {
+  @apply hidden;
+}
+
+.filters input + label {
+  background-position: 50%;
+  background-size: 9px;
+  @apply before:content-[""] before:border before:border-white before:mr-2 before:px-[7px] before:rounded-[3px];
+}
+.filters input:checked + label::before {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: 0.625rem;
+}
+
+.filters input:checked + label {
+  @apply before:bg-[url("https://www.carpetright.co.uk/store/permanent-b0b701/assets/images/check.a88e6252.svg")] bg-no-repeat;
+}
+
+/* location listing */
+
+.locator-initial {
+  @apply px-3.5 pt-3.5;
+}
+.locator-initial .locator-initialText {
+  @apply text-primary-gray mb-[1.125rem];
+}
+
+.locator-initial .locator-countries {
+  @apply flex flex-wrap justify-between;
+}
+.locator-countries .locator-countryLink {
+  @apply font-Arial font-bold w-[calc(33.33333%_-_0.5rem)] mr-3 mb-3 py-6 px-6 text-center border border-search-block-gray hover:border-[#979799] hover:bg-[#979799] hover:text-white last:mr-0 rounded-[9px];
+}
+
+.locator-countries .locator-countryLink:nth-child(3) {
+  @apply mr-0;
+}
+
+/* Locator Result */
+
+.locator-resultsContainer {
+  @apply max-h-[calc(100vh_-_172px)] overflow-y-scroll;
+}
+
+.locator-resultsContainer .Locator-resultsSummary {
+  @apply pt-[1.125rem] px-3.5;
+}
+
+.locator-resultsContainer .Locator-resultsSummary p {
+  @apply text-sm text-primary-gray font-Carpetright font-normal;
+}
+
+.locator-resultsContainer .locator-results {
+  @apply pt-1;
+}
+
+.result-list .result-list-item {
+  counter-increment: resultCount;
+  @apply m-3.5 pl-14 border border-[#40bfba] rounded-[9px] opacity-90 bg-[rgba(103,199,197,.05)] relative z-0 before:absolute before:left-7 before:top-4  before:content-[counter(resultCount,upper-alpha)] before:font-Carpetright before:font-bold before:text-lg before:text-primary-gray;
+}
+
+.result-list-item .location-content {
+  @apply p-[1.125rem] pl-0 flex justify-between;
+}
+
+.result-list-item .location-name h3 {
+  @apply text-lg font-Carpetright font-normal text-breadcrumb-sky-blue pb-3.5;
+}
+
+.result-list-item .location-address address {
+  @apply not-italic text-[0.75rem] leading-5 text-primary-gray;
+}
+
+.result-list-item .location-content .location-right-col {
+  @apply flex flex-col justify-between;
+}
+.miles {
+  @apply text-right;
+}
+
+.location-cta .btn-primary {
+  @apply min-w-[8.375rem];
+}
+.location-cta-mobile {
+  @apply hidden;
+}
+
+.location-name .miles {
+  @apply hidden;
+}
+.location-right-col .miles {
+  @apply block;
+}
+
+/* Locator Page */
+
+/* Trust Pilot Promo image section */
+
+.PromoImages {
+  @apply flex pb-[1.375rem];
+}
+.PromoImages.career-promo {
+  @apply pt-4 xs:pt-[1.375rem];
+}
+
+.PromoImage-link {
+  @apply relative block;
+}
+
+.PromoImages .PromoImages-wrapper {
+  @apply w-2/4 first:mr-7;
+}
+.PromoImages.career-promo .PromoImages-wrapper {
+  @apply first:mr-0;
+}
+.PromoImages.career-promo .PromoImages-wrapper {
+  @apply w-full;
+}
+.PromoImage-link:hover .PromoImage-photo {
+  @apply scale-[1.02] transition-all duration-150 ease-linear;
+}
+.PromoImages .PromoImage-photo {
+  background-size: cover;
+  background-position: center center;
+  @apply h-[17.563rem] rounded-md transition-all duration-150 ease-linear;
+}
+
+.PromoImages .PromoImage-textWrapper {
+  @apply absolute bottom-0 left-0 w-[60%] pb-6 pl-6;
+}
+
+.PromoImage-text p {
+  text-shadow: 0.0625rem 0.0625rem 0.625rem rgba(0, 0, 0, 0.6);
+  @apply font-Carpetright text-[2rem] text-white leading-9 font-bold;
+}
+
+/* Trust Pilot Promo image section */
+
+/* Directory managers Style */
+
+.dm-wrapper {
+  @apply bg-primary-gray rounded-lg text-white p-[1.125rem] mb-7;
+}
+.dm-wrapper-inner {
+  @apply flex;
+}
+/* .dm-left-col{
+  @apply w-[40%] pr-[4.875rem] pl-9;
+} */
+.dm-left-col {
+  @apply w-[27.875rem] pl-9 pr-[4.875rem];
+}
+.dm-right-col {
+  @apply w-[calc(100%_-_27.875rem)] text-left flex flex-col justify-center items-center border-l border-l-breadcrumb-sky-blue px-9;
+}
+
+.dm-heading {
+  @apply mb-[1.375rem] text-center;
+}
+
+.dm-heading .dm-num-loc h2 {
+  @apply text-[1.75rem] font-Carpetright font-bold leading-10 pb-2;
+}
+.dm-heading .dm-title {
+  @apply text-lg font-normal;
+}
+
+.dm-search .dm-search-desc p {
+  @apply text-xs font-normal pb-3.5 text-center;
+}
+.dm-search-bar {
+  @apply pb-2;
+}
+
+.dm-search-bar input {
+  @apply p-2.5 flex-1 text-xs bg-white border-0 focus:outline-none text-search-block-gray min-w-[13.625rem] max-w-[27.625rem];
+}
+
+.dm-search-bar .dm-search-btn {
+  @apply bg-breadcrumb-sky-blue text-xs text-white font-normal px-[1.625rem] h-[35px] mx-2.5;
+}
+.dm-search-bar .dm-form-group {
+  @apply flex;
+}
+.dm-geo-location.geo-location {
+  @apply flex justify-center items-center;
+}
+
+.dm-geo-location.geo-location img {
+  @apply h-[21px];
+}
+.dm-geo-location.geo-location span {
+  @apply pl-2 text-xs;
+}
+
+.dm-right-col .dm-top-desc {
+  @apply text-[0.875rem] leading-5;
+}
+/* .dm-list-wrapper{
+  @apply mt-7;
+} */
+.dm-list-wrapper ul.dm-list {
+  -webkit-column-count: 4;
+  -moz-column-count: 4;
+  column-count: 4;
+}
+ul.dm-list li {
+  @apply mb-3.5;
+}
+ul.dm-list li a {
+  @apply text-xs text-breadcrumb-sky-blue;
+}
+ul.dm-list li a span {
+  @apply last:text-black last:ml-1.5;
+}
+
+.nearby-stores.all-dm-stores .Nearby-loc-card {
+  @apply w-[33%] mx-3.5;
+}
+
+/* Directory managers Style */
+
+/* 404 page Design */
+
+.notfound-heading h2{
+  @apply text-[1.625rem] leading-10 font-medium text-primary-gray font-Carpetright my-1.5;
+}
+
+.notfound-couse,
+.notfound-hint {
+  @apply mb-[2.375rem];
+}
+
+.notfound-couse h3{
+  @apply mt-14 text-[21px] leading-[1.05] text-primary-gray font-Carpetright font-medium my-1.5;
+}
+.notfound-hint h3 {
+  @apply text-[21px] leading-[1.05] text-primary-gray font-Carpetright font-medium my-1.5;
+}
+.notfound-couse p,
+.notfound-hint p {
+  @apply text-sm text-primary-gray mb-2.5;
+}
+
+.bottom-suggestion h3{
+  @apply text-[21px] leading-[1.05] text-primary-gray font-Carpetright font-medium mt-1.5 mb-5 text-center;
+}
+.bottom-suggestion .shop-categories{
+  @apply mb-14;
+}
+.shop-categories .categories-button .row{
+  @apply text-center;
+}
+.shop-categories .categories-button .row a{
+  @apply bg-[#58bdb9] h-[2.875rem] text-sm leading-[1.15] font-bold text-white font-Arial p-[15px] rounded-lg inline-block mr-2 mb-2.5;
+}
+
+.guide-to-action .GTA-button{@apply text-center;}
+
+.guide-to-action .GTA-button a{
+  @apply bg-[#58bdb9] h-[2.875rem] text-sm leading-[1.15] font-bold text-white font-Arial p-[15px] rounded-lg inline-block mb-2.5;
+}
+/* 404 page Design */
+
+/* Media Queries */
+
+@media screen and (max-width: 1200px) {
+  /* DM style */
+  .dm-list-wrapper ul.dm-list {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+  }
+}
+@media screen and (max-width: 991px) {
+  .container-small {
+    @apply max-w-2xl;
+  }
+  /* Locator page */
+  .locator-inner-wrapper {
+    @apply flex-col;
+  }
+  .locator-content {
+    @apply w-full max-w-full;
+  }
+  .locator-mapBox {
+    @apply w-full hidden;
+  }
+  .location-cta-mobile {
+    @apply block mt-5;
+  }
+  .location-right-col {
+    @apply hidden;
+  }
+  .result-list-item .location-content {
+    @apply flex-col pl-[1.125rem];
+  }
+  .location-name {
+    @apply flex justify-between items-start;
+  }
+  .location-name .miles {
+    @apply block;
+  }
+  .location-right-col .miles {
+    @apply hidden;
+  }
+  .location-cta {
+    @apply hidden;
+  }
+  .location-cta-mobile .btn-primary {
+    @apply min-w-[10.938rem];
+  }
+  .result-list .result-list-item {
+    @apply before:content-none pl-0;
+  }
+/* Locator page */
+  /* Location page Responsive part */
+  .hero-banner {
+    @apply h-auto !bg-none pb-[1.375rem];
+  }
+  .hero-banner .hero-text {
+    position: inherit;
+    @apply top-auto rounded-none bottom-0 left-0 right-0;
+  }
+  .hero-banner .img-responsive {
+    @apply block;
+  }
+  .store-detail .button-group img {
+    @apply hidden;
+  }
+  .PromoImages .PromoImage-photo {
+    @apply h-[9.375rem];
+  }
+  .PromoImage-text p {
+    @apply text-[1rem] leading-5;
+  }
+  .PromoImages .PromoImage-textWrapper {
+    @apply pb-3.5 pl-3.5;
+  }
+  .nearby-stores .nearby-row {
+    @apply flex-col;
+  }
+  .nearby-stores .Nearby-loc-card {
+    @apply w-full mb-3.5;
+  }
+  .About-carouselWrapper {
+    @apply hidden;
+  }
+  .about-sec .about-sec-content {
+    @apply w-full;
+  }
+  .box.store-timing {
+    @apply pl-4;
+  }
+  .box.store-map {
+    @apply pl-4;
+  }
+  /* Location page Responsive part */
+  /* DM's style */
+  .dm-wrapper-inner {
+    @apply flex-col;
+  }
+  .dm-left-col {
+    @apply w-full pb-3.5 px-0;
+  }
+  .dm-right-col {
+    @apply w-full border-l-0 border-t border-t-breadcrumb-sky-blue pt-3.5 px-0;
+  }
+  .dm-search-bar .dm-form-group {
+    @apply justify-center;
+  }
+  .dm-list-wrapper ul.dm-list {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+  }
+  .nearby-stores.all-dm-stores .nearby-row {
+    @apply !flex-row gap-y-7 flex-wrap justify-start;
+  }
+  .nearby-stores.all-dm-stores .Nearby-loc-card {
+    @apply w-[calc(50%_-_28px)];
+  }
+  .dm-heading {
+    @apply mb-3.5;
+  }
+  .dm-wrapper {
+    @apply rounded-none;
+  }
+  .Nearby-loc-card.dm-loc-card .near-loc-cta .btn-primary {
+    @apply w-full max-w-full;
+  }
+  /* DM's style */
+}
+
+@media screen and (max-width: 767px) {
+  .container-small {
+    @apply max-w-full;
+  }
+  /* Locator DM's links */
+  .locator-initial .locator-countries {
+    @apply flex-col;
+  }
+  .locator-countries .locator-countryLink {
+    @apply w-full py-3;
+  }
+  /* Location detail page */
+  .store-details .outer-row {
+    @apply flex-col;
+  }
+  .store-details {
+    @apply pt-0;
+  }
+  .box.store-timing {
+    @apply pl-0 pt-[1.375rem];
+  }
+  .box.store-map {
+    @apply pl-0 mt-[3.125rem];
+  }
+  .box.store-map img {
+    @apply w-full h-[16.375rem] object-cover;
+  }
+  .holiday-hours {
+    @apply pt-3.5;
+  }
+  .PromoImages {
+    @apply flex-col;
+  }
+  .PromoImages .PromoImages-wrapper {
+    @apply w-full first:mr-0 first:mb-3.5;
+  }
+
+  .brands-section .brand-logo-wrapper {
+    @apply flex-col;
+  }
+  .brand-logo-wrapper .brand-logo {
+    @apply w-full;
+  }
+  .brand-logo-wrapper .brand-logo img {
+    @apply w-full;
+  }
+  ul.ListSection-content {
+    -webkit-columns: 1;
+    -moz-columns: 1;
+    column-count: 1;
+    @apply pl-3.5;
+  }
+  .reasons-tiles {
+    @apply flex-col;
+  }
+  .reasons-tiles .tile {
+    @apply w-full;
+  }
+  .reasons-tiles .tile img {
+    @apply max-h-[7.5rem] mx-auto;
+  }
+  .hero-text .hero-button {
+    @apply hidden;
+  }
+  /* Location detail page */
+   /* DM style */
+  .dm-list-wrapper ul.dm-list {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+  }
+  .nearby-stores.all-dm-stores .nearby-row {
+    @apply flex-col;
+  }
+  .nearby-stores.all-dm-stores .Nearby-loc-card {
+    @apply w-full mx-0;
+  }
+  .dm-all-location-wrapper {
+    @apply px-3.5;
+  }
+   /* DM style */
+}
+@media screen and (max-width: 500px) {
+  .search-form .search-form-group {
+    @apply flex-wrap;
+  }
+  .search-form .geo-location {
+    @apply mt-3;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .search-form .search-bar {
+    @apply w-full;
+  }
+  .search-form .search-btn {
+    @apply w-full mt-3;
+  }
+  .search-form .search-btn button {
+    @apply w-full m-0;
+  }
+  /* DM style */
+  .dm-search-bar input {
+    @apply min-w-max;
+  }
+   /* DM style */
+}
+#chat-app .yext-chat-panel__container {
+  background-color: #fff;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
+#chat-app .yext-chat-header__container {
+  background: none #0084ff;
+  color: #fff;
+  padding: 10px;
+}
+#chat-app .yext-chat-message-bubble__bubble__bot {
+  background: none #f5f8fa;
+  color: #1d2129;
+}
+#chat-app .yext-chat-message-bubble__bubble__user {
+  background: none #0084ff;
+  color: #fff;
 }

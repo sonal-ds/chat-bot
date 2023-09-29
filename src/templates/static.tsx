@@ -14,11 +14,12 @@ import {
   TemplateProps,
   TemplateRenderProps,
 } from "@yext/pages";
-import PageLayout from "../components/PageLayout";
-import Card from "../components/Card";
+
 import { ExternalImage } from "../types/ExternalImage";
 import Favicon from "../assets/images/yext-favicon.ico";
-import Banner from "../components/Banner";
+import { ChatHeadlessProvider, HeadlessConfig } from "@yext/chat-headless-react";
+import { ChatPopUp } from "@yext/chat-ui-react";
+import "@yext/chat-ui-react/bundle.css";
 
 /**
  * Not required depending on your use case.
@@ -99,6 +100,7 @@ export const getHeadConfig: GetHeadConfig<
         },
       },
     ],
+    
   };
 };
 
@@ -107,16 +109,22 @@ export const getHeadConfig: GetHeadConfig<
  * The props passed in here are the direct result from `transformProps`.
  */
 const Static: Template<ExternalImageRenderData> = ({ externalImage }) => {
+
   return (
     <>
-      <PageLayout>
-        <Banner name={"Turtlehead Tacos"} />
-        <div className="centered-container">
-          <div className="section space-y-14 px-10">
-            <Card {...externalImage} />
-          </div>
-        </div>
-      </PageLayout>
+    <ChatHeadlessProvider
+      config={{
+        apiKey: "31f401301789701fbabfd044215fc5ed",
+        botId: "bot",
+        saveToSessionStorage: false,
+        apiDomain:"sbx-cdn.yextapis.com"
+
+
+      }}
+    >
+      <ChatPopUp title={"chat bot"}/>
+
+      </ChatHeadlessProvider>
     </>
   );
 };

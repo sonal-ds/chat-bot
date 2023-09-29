@@ -7,7 +7,7 @@
     "c_itemCategory",
     "c_relatedMenu",
     "photoGallery",
-    "description",
+    "richTextDescription",
     "slug"
   ],
   "required": []
